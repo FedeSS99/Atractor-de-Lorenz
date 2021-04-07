@@ -11,3 +11,6 @@ The Python code reads the .txt output file that contains the input values of the
 in the finite differences given that if it isn´t small enough it won´t have convergent solutions.
 
 The following is an example of the visual output:
+
+https://user-images.githubusercontent.com/67650365/113937539-ecf52000-97be-11eb-94c8-628132afa295.mp4
+
