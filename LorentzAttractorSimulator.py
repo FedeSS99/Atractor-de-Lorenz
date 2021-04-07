@@ -1,5 +1,5 @@
 from matplotlib.pyplot import figure, show, get_cmap
-from matplotlib.animation import FuncAnimation, PillowWriter
+from matplotlib.animation import FuncAnimation
 
 from numpy import array, amin, amax
 
