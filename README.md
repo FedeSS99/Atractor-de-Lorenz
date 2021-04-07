@@ -11,5 +11,4 @@ The Python code reads the .txt output file that contains the input values of the
 in the finite differences given that if it isn´t small enough it won´t have convergent solutions.
 
 The following link shows a simulation of the system propose by Lorenz: 
-
-
+https://youtu.be/roUtXxwq4vA
