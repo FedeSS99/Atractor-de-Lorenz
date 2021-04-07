@@ -10,4 +10,4 @@ where the user can change the values of initial conditions and the already seen 
 The Python code reads the .txt output file that contains the input values of the system along with the time and solutions. An important value is the time interval used
 in the finite differences given that if it isn´t small enough it won´t have convergent solutions.
 
-The following is an example of the visual output 
+The following is an example of the visual output:
