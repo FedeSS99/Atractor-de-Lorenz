@@ -1,4 +1,4 @@
-from matplotlib.pyplot import figure, show, get_cmap
+from matplotlib.pyplot import figure, show
 from matplotlib.animation import FuncAnimation
 
 from numpy import array, amin, amax
