@@ -8,7 +8,13 @@ The Fortran code solves the following system of differential equations by finite
 where the user can change the values of initial conditions and the already seen parameters in the same file. In this same code the Python file is executed at the end of the calculations (Some minor changes must be done if the OS system is Linux).
 
 The Python code reads the .txt output file that contains the input values of the system along with the time and solutions. An important value is the time interval used
-in the finite differences given that if it isn´t small enough it won´t have convergent solutions.
+in the finite differences given that if it isn´t small enough it won´t have convergent solutions. There are two different programs:
 
-The following link shows a simulation of the system propose by Lorenz: 
-https://youtu.be/Qipy5A2d384
+1. LorentzAttractorSimulator_Unique.py: This one only shows a 3D plotting of the solutions obtained and saved in the .txt file.
+
+2. LorentzAttractorSimulator_Multiple.py: This one does the same but also shows the temporal evolution of the coordinates in 2D plots separately.
+
+The following links shows a simulation of the system propose by Lorenz with both programs: 
+
+Unique -> https://youtu.be/Qipy5A2d384  
+Multiple -> https://youtu.be/v5C7-NbWaVo
