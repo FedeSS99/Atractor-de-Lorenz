@@ -48,7 +48,8 @@ program LorentzAttractorData
     end do
     close(01)
 
-    call system("python LorentzAttractorSimulator.py")
+    !call system("python LorentzAttractorSimulator_Unique.py")
+    !call system("python LorentzAttractorSimulator_Multiple.py")
     
 end program LorentzAttractorData
 
