@@ -19,19 +19,21 @@ program LorentzAttractorData
     !Time variables
     !t: t variable that goes from 0 to a final time
     !dt: time interval
-    !final_time: 
+    !final_time: The last time value that will be evaluated
     t = 0
     write(*,*) "Enter the time interval to use and the final time:"
     read(*,*) dt, final_time
 
     steps  = int(final_time/dt)+1
 
+    !Allocating the array positions and saving the initial conditions
     allocate(positions(steps, 3))
 
     positions(1, 1)=x0
     positions(1, 2)=y0
     positions(1, 3)=z0
 
+    !User decides which numerical method will be used
     write(*,*) "Choose which method will be used to solve the Lorenz Equations"
     write(*,*) "1) Euler Method"
     write(*,*) "2) Runge-Kutta 4"
@@ -55,18 +57,19 @@ program LorentzAttractorData
             write(*,*) "Entrada invalida"
     end select
 
-    call system("del Lorenz_Results.dat")
-
-    open(unit=01, file="Lorenz_Results.dat", status='New')
-    write(01,*) x0,y0,z0,a,b,c
+    !The results from the used method and the input constants are saved in two
+    !different .dat files
+    open(unit=01, file="Lorenz_Path.dat")
     do i=1,steps
         write(01,*) t, (positions(i,j), j=1,3)
         t = t+dt
     end do
     close(01)
 
-    !call system("python LorenzAttractorSimulator_Multiple.py")
-    call system("python LorenzAttractorSimulator_Unique.py")
+    open(unit=02, file="Lorenz_Constants.dat")
+    write(02,*) x0, y0, z0, a, b, c
+
+    write(*,*) "The results and constant values have been saved!"
     
 end program LorentzAttractorData
 

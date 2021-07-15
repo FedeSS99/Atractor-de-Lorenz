@@ -3,31 +3,35 @@ from matplotlib.animation import FuncAnimation
 
 from numpy import array, amin, amax
 
-with open("Lorenz_Results.txt", 'r') as archivo:
-    lineas = archivo.readlines()
+#The output files from the Fortran code are read and saved in arrays
+with open("Lorenz_Path.dat", 'r') as out_file1:
+    lines = out_file1.readlines()
 
-    constantes_string = lineas[0].split()
-    constantes = [float(elemento) for elemento in constantes_string]
+    t_values = array([float(linea.split()[0]) for linea in lines])
+    x_values = array([float(linea.split()[1]) for linea in lines])
+    y_values = array([float(linea.split()[2]) for linea in lines])
+    z_values = array([float(linea.split()[3]) for linea in lines])
 
-    num_values = lineas[1:]
+with open("Lorenz_Constants.dat", "r") as out_file2:
+    line = out_file2.readlines()
 
-    t_values = array([float(linea.split()[0]) for linea in num_values])
-    x_values = array([float(linea.split()[1]) for linea in num_values])
-    y_values = array([float(linea.split()[2]) for linea in num_values])
-    z_values = array([float(linea.split()[3]) for linea in num_values])
+    constants = [float(element) for element in line[0].split()]
 
+#The minimum and max values for each coordinate and time value are searched and saved
 xmin, xmax = amin(x_values), amax(x_values)
 ymin, ymax = amin(y_values), amax(y_values)
 zmin, zmax = amin(z_values), amax(z_values)
 tmin, tmax = amin(t_values), amax(t_values)
 
+#The main figure within its subplots are created with string formats to display relevant data
 main_figure = figure(figsize=(12,6.5))
-main_figure.suptitle(r"$x_0$={0:.2f} $y_0$={1:.2f} $z_0$={2:.2f}".format(*constantes[:3])+"\n"+
-                    r"$\sigma$={0:.2f} $\rho$={1:.2f} $\beta$={2:.2f}".format(*constantes[3:]))
+main_figure.suptitle(r"$x_0$={0:.2f} $y_0$={1:.2f} $z_0$={2:.2f}".format(*constants[:3])+"\n"+
+                    r"$\sigma$={0:.2f} $\rho$={1:.2f} $\beta$={2:.2f}".format(*constants[3:]))
 
 subX, subY, subZ = main_figure.add_subplot(231),main_figure.add_subplot(232), main_figure.add_subplot(233)
 subMain = main_figure.add_subplot(235, projection='3d')
 
+#The subplots are initiated with their respective labels and axis limits
 pathX_plot = subX.plot([], [], '-b', linewidth=0.75)
 pathX = pathX_plot[0]
 subX.set_xlabel("t")
@@ -60,8 +64,10 @@ subMain.set_ylabel("Y(t)")
 subMain.set_zlabel("Z(t)")
 path3D = path_plot[0]
 
+#The next line is optional for the sake of the subplots position and order
 main_figure.tight_layout()
 
+#The input function to update the plot for each step time is the following
 def update_path(i):
     path3D.set_data(x_values[:i],y_values[:i])
     path3D.set_3d_properties(z_values[:i])
@@ -72,6 +78,7 @@ def update_path(i):
 
     return [path3D, pathX, pathY, pathZ]
 
+#The animation is created and later displayed
 path_ani = FuncAnimation(main_figure, update_path, len(x_values), interval=10, blit=True, repeat=False)
 
 show()
