@@ -15,5 +15,6 @@ The Python code reads the .txt output file that contains the input values of the
 
 The following links shows a simulation of the system propose by Lorenz with both programs: 
 
-Unique -> https://youtu.be/Qipy5A2d384  
-Multiple -> https://youtu.be/v5C7-NbWaVo
+* First Version
+  * Unique -> https://youtu.be/Qipy5A2d384
+  * Multiple -> https://youtu.be/v5C7-NbWaVo
