@@ -1,5 +1,5 @@
 from matplotlib.pyplot import figure, show, pause
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, FFMpegWriter
 from numpy import array, amin, amax
 
 #The output files from the Fortran code are read and saved in arrays
@@ -54,27 +54,17 @@ def update_path(i):
 
 #The animation is created and later displayed
 path_ani = FuncAnimation(main_figure, update_path, len(x_values), interval=1, blit=True, repeat=False)
+show()
 """
 
-show(block=False)
-pause(0.01)
+#The following block creates .mp4 file to see the results without having Python executing the whole time
+writer = FFMpegWriter(fps=30)
 
-background = main_figure.canvas.copy_from_bbox(main_figure.bbox)
+with writer.saving(main_figure, "Damped_Oscillator.mp4", 300):
+    for i in range(len(t_values)):
+        path.set_data(x_values[:i],y_values[:i])
+        path.set_3d_properties(z_values[:i])
+    
+        title.set_text(f't={t_values[i]:.3f}s')
 
-subfigure_main.draw_artist(path)
-subfigure_main.draw_artist(title)
-
-main_figure.canvas.blit(main_figure.bbox)
-
-for i in range(len(t_values)):
-    main_figure.canvas.restore_region(background)
-
-    path.set_data(x_values[:i],y_values[:i])
-    path.set_3d_properties(z_values[:i])
-    title.set_text(f't={t_values[i]:.3f}s')
-
-    subfigure_main.draw_artist(path)
-    subfigure_main.draw_artist(title)
-
-    main_figure.canvas.update()
-    main_figure.canvas.flush_events()
+        writer.grab_frame()

@@ -1,6 +1,6 @@
 from matplotlib.pyplot import figure, show, setp, pause
 from matplotlib.gridspec import GridSpec
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, FFMpegWriter
 
 from numpy import array, amin, amax
 
@@ -81,33 +81,19 @@ def update_path(i):
 
 #The animation is created and later displayed
 path_ani = FuncAnimation(main_figure, update_path, len(x_values), interval=1, blit=True, repeat=False)
+show()
 """
-#Block to create the animation using blitting
-show(block=False)
-pause(0.01)
 
-background = main_figure.canvas.copy_from_bbox(main_figure.bbox)
+#The following block creates .mp4 file to see the results without having Python executing the whole time
+writer = FFMpegWriter(fps=30)
 
-subX.draw_artist(pathX)
-subY.draw_artist(pathY)
-subZ.draw_artist(pathZ)
-subMain.draw_artist(path3D)
+with writer.saving(main_figure, "Damped_Oscillator.mp4", 300):
+    for i in range(len(t_values)):
+        path3D.set_data(x_values[:i],y_values[:i])
+        path3D.set_3d_properties(z_values[:i])
 
-main_figure.canvas.blit(main_figure.bbox)
+        pathX.set_data(t_values[:i], x_values[:i])
+        pathY.set_data(t_values[:i], y_values[:i])
+        pathZ.set_data(t_values[:i], z_values[:i])
 
-for i in range(len(t_values)):
-    main_figure.canvas.restore_region(background)
-
-    pathX.set_data(t_values[:i], x_values[:i])
-    pathY.set_data(t_values[:i], y_values[:i])
-    pathZ.set_data(t_values[:i], z_values[:i])
-    path3D.set_data(x_values[:i],y_values[:i])
-    path3D.set_3d_properties(z_values[:i])
-
-    subX.draw_artist(pathX)
-    subY.draw_artist(pathY)
-    subZ.draw_artist(pathZ)
-    subMain.draw_artist(path3D)
-
-    main_figure.canvas.update()
-    main_figure.canvas.flush_events()
+        writer.grab_frame()
