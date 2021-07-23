@@ -85,9 +85,10 @@ show()
 """
 
 #The following block creates .mp4 file to see the results without having Python executing the whole time
-writer = FFMpegWriter(fps=30)
+fps = 60
+writer = FFMpegWriter(fps=fps)
 
-with writer.saving(main_figure, "Damped_Oscillator.mp4", 300):
+with writer.saving(main_figure, f"LorenzAttractor_{fps}.mp4", 300):
     for i in range(len(t_values)):
         path3D.set_data(x_values[:i],y_values[:i])
         path3D.set_3d_properties(z_values[:i])
