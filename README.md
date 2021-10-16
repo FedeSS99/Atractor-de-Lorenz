@@ -1,4 +1,4 @@
-# Lorenz-Attractor
+# Solucionador del Atractor de Lorenz
 Scripts de Python y Fortran que resuelven y muestran el Atracto de Lorenz.
 
 Se cuenta con un script de Python en conjunto con un rutinas escritas para ser compiladas
