@@ -1,4 +1,2 @@
-/a.exe
-/Lorenz_Path.dat
-/Lorenz_Constants.dat
-/Imagenes
+.\.ipynb_checkpoints
+.\.gitignore

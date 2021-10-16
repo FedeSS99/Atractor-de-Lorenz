@@ -1,17 +1,17 @@
 # Lorenz-Attractor
-Python and Fortran scripts that solve and show the Lorenz Attractor.
+Scripts de Python y Fortran que resuelven y muestran el Atracto de Lorenz.
 
-The Fortran code solves the following system of differential equations by Euler's Method and Runge-Kutta 4:
+Se cuenta con un script de Python en conjunto con un rutinas escritas para ser compiladas
+con el paquete Cython con el fin de acelerar los tiempos de ejecución del método númerico.
+
+Además se tiene también un notebook el cual resuelve bajo la misma estructura del código
+anterior; ambos formatos solucionan el siguiente sistema de ecuaciones diferenciales acopladas, llamadas también Atracto de Lorenz, bajo el método de Runge-Kutta de orden 4:
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_cm&space;\large&space;\frac{dx}{dt}=\sigma(y-x)\quad\frac{dy}{dt}=x(\rho-z)-y\quad\frac{dz}{dt}=xy-\beta&space;z" target="_blank"><img src="https://latex.codecogs.com/png.latex?\bg_white&space;\fn_cm&space;\large&space;\frac{dx}{dt}=\sigma(y-x)\quad\frac{dy}{dt}=x(\rho-z)-y\quad\frac{dz}{dt}=xy-\beta&space;z" title="\large \frac{dx}{dt}=\sigma(y-x)\quad\frac{dy}{dt}=x(\rho-z)-y\quad\frac{dz}{dt}=xy-\beta z" /></a>
 
-where the user can type the values of initial conditions and the already seen parameters by compiling and executing the same file.
-
-The Python code reads the .txt output file that contains the input values of the system along with the time and solutions. An important value is the time interval used in the finite differences given that if it isn´t small enough it won´t have convergent solutions. There are two different programs:
-
-1. LorentzAttractorSimulator_Unique.py: This one only shows a 3D plotting of the solutions obtained and saved in the .txt file.
-
-2. LorentzAttractorSimulator_Multiple.py: This one does the same but also shows the temporal evolution of the coordinates in 2D plots separately.
+El usuario es capaz de asignar los valores deseados de condiciones iniciales así como de los
+parámetros visibles en las ecuaciones; siendo estos usados para determinar las soluciones
+númericas.
 
 The following links shows a simulation of the system propose by Lorenz with both programs: 
 
