@@ -5,7 +5,7 @@ Se cuenta con un script de Python en conjunto con un rutinas escritas para ser c
 con el paquete Cython con el fin de acelerar los tiempos de ejecución del método númerico.
 
 Además se tiene también un notebook el cual resuelve bajo la misma estructura del código
-anterior; ambos formatos solucionan el siguiente sistema de ecuaciones diferenciales acopladas, llamadas también Atracto de Lorenz, bajo el método de Runge-Kutta de orden 4:
+anterior; ambos formatos solucionan el siguiente sistema de ecuaciones diferenciales acopladas, llamadas también Atractor de Lorenz, bajo el método de Runge-Kutta de orden 4:
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_cm&space;\large&space;\frac{dx}{dt}=\sigma(y-x)\quad\frac{dy}{dt}=x(\rho-z)-y\quad\frac{dz}{dt}=xy-\beta&space;z" target="_blank"><img src="https://latex.codecogs.com/png.latex?\bg_white&space;\fn_cm&space;\large&space;\frac{dx}{dt}=\sigma(y-x)\quad\frac{dy}{dt}=x(\rho-z)-y\quad\frac{dz}{dt}=xy-\beta&space;z" title="\large \frac{dx}{dt}=\sigma(y-x)\quad\frac{dy}{dt}=x(\rho-z)-y\quad\frac{dz}{dt}=xy-\beta z" /></a>
 
