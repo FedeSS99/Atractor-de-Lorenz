@@ -14,8 +14,8 @@ El usuario es capaz de asignar los valores deseados de condiciones iniciales as�
 Los siguientes videos presentan simulaciones de los resultados estáticos a obtenerse con los scripts y notebook: 
 
 * Primera Version
-  * Unique -> https://youtu.be/Qipy5A2d384
-  * Multiple -> https://youtu.be/v5C7-NbWaVo
+  * Unica gráfica -> https://youtu.be/Qipy5A2d384
+  * Multiples gráficas -> https://youtu.be/v5C7-NbWaVo
 
 * Segunda Version
-  * Multiple -> https://youtu.be/tmA8tr8Vq5s
+  * Multiples gráficas -> https://youtu.be/tmA8tr8Vq5s
