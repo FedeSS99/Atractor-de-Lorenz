@@ -9,15 +9,13 @@ anterior; ambos formatos solucionan el siguiente sistema de ecuaciones diferenci
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_cm&space;\large&space;\frac{dx}{dt}=\sigma(y-x)\quad\frac{dy}{dt}=x(\rho-z)-y\quad\frac{dz}{dt}=xy-\beta&space;z" target="_blank"><img src="https://latex.codecogs.com/png.latex?\bg_white&space;\fn_cm&space;\large&space;\frac{dx}{dt}=\sigma(y-x)\quad\frac{dy}{dt}=x(\rho-z)-y\quad\frac{dz}{dt}=xy-\beta&space;z" title="\large \frac{dx}{dt}=\sigma(y-x)\quad\frac{dy}{dt}=x(\rho-z)-y\quad\frac{dz}{dt}=xy-\beta z" /></a>
 
-El usuario es capaz de asignar los valores deseados de condiciones iniciales así como de los
-parámetros visibles en las ecuaciones; siendo estos usados para determinar las soluciones
-númericas.
+El usuario es capaz de asignar los valores deseados de condiciones iniciales así como de los parámetros visibles en las ecuaciones; siendo estos usados para determinar las soluciones númericas.
 
-The following links shows a simulation of the system propose by Lorenz with both programs: 
+Los siguientes videos presentan simulaciones de los resultados estáticos a obtenerse con los scripts y notebook: 
 
-* First Version
+* Primera Version
   * Unique -> https://youtu.be/Qipy5A2d384
   * Multiple -> https://youtu.be/v5C7-NbWaVo
 
-* Second Version
+* Segunda Version
   * Multiple -> https://youtu.be/tmA8tr8Vq5s
