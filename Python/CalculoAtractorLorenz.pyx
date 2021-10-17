@@ -5,13 +5,13 @@ cimport cython
 import numpy as np
 cimport numpy as np
 
-def dXdtCy(np.float64_t x,np.float64_t y,float sig):
+cdef np.float64_t dXdtCy(np.float64_t x,np.float64_t y,float sig):
     return sig*(y-x)
 
-def dYdtCy(np.float64_t x,np.float64_t y,np.float64_t z,float rho):
+cdef np.float64_t dYdtCy(np.float64_t x,np.float64_t y,np.float64_t z,float rho):
     return (rho-z)*x-y
 
-def dZdtCy(np.float64_t x,np.float64_t y,np.float64_t z,float b):
+cdef np.float64_t dZdtCy(np.float64_t x,np.float64_t y,np.float64_t z,float b):
     return x*y-b*z
 
 @cython.boundscheck(False)
