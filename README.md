@@ -12,10 +12,3 @@ anterior; ambos formatos solucionan el siguiente sistema de ecuaciones diferenci
 El usuario es capaz de asignar los valores deseados de condiciones iniciales así como de los parámetros visibles en las ecuaciones; siendo estos usados para determinar las soluciones númericas.
 
 Los siguientes videos presentan simulaciones de los resultados estáticos a obtenerse con los scripts y notebook: 
-
-* Primera Version
-  * Unica gráfica -> https://youtu.be/Qipy5A2d384
-  * Multiples gráficas -> https://youtu.be/v5C7-NbWaVo
-
-* Segunda Version
-  * Multiples gráficas -> https://youtu.be/tmA8tr8Vq5s
